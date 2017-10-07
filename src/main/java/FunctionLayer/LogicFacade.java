@@ -8,8 +8,8 @@ import DBAccess.UserMapper;
  */
 public class LogicFacade {
 
-    public static User validateLogin( String email, String password ) throws LoginSampleException {
-        return UserMapper.validateUser( email, password );
+    public static User login( String email, String password ) throws LoginSampleException {
+        return UserMapper.login( email, password );
     } 
 
     public static User createUser( String email, String password ) throws LoginSampleException {

@@ -35,7 +35,7 @@ public class UserMapper {
         }
     }
 
-    public static User validateUser( String email, String password ) throws LoginSampleException {
+    public static User login( String email, String password ) throws LoginSampleException {
         try {
             Connection con = Connector.connection();
             String SQL = "SELECT id, role FROM user "
