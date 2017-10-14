@@ -7,11 +7,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-/**
- The purpose of Register is to...
-
- @author kasper
- */
 public class Register extends Command {
 
     @Override
