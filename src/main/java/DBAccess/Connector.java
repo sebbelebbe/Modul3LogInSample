@@ -11,16 +11,20 @@ import java.sql.SQLException;
  */
 public class Connector {
 
-    private static final String url = "jdbc:mysql://46.101.253.149:3306/useradmin";
-    private static final String username = "doorkeeper";
-    private static final String password = "bank3*andyouarein";
+    private static final String URL = "jdbc:mysql://46.101.253.149:3306/useradmin";
+    private static final String USERNAME = "doorkeeper";
+    private static final String PASSWORD = "bank3*andyouarein";
 
     private static Connection singleton;
 
-    public static Connection connection() throws ClassNotFoundException, SQLException  {
+    public static void setConnection( Connection con ) {
+        singleton = con;
+    }
+
+    public static Connection connection() throws ClassNotFoundException, SQLException {
         if ( singleton == null ) {
-            Class.forName( "com.mysql.jdbc.Driver" );
-            singleton = DriverManager.getConnection( url, username, password );
+            Class.forName( "com.mysql.cj.jdbc.Driver" );
+            singleton = DriverManager.getConnection( URL, USERNAME, PASSWORD );
         }
         return singleton;
     }
