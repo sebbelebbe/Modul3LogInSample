@@ -19,6 +19,7 @@ public class Register extends Command {
             HttpSession session = request.getSession();
             session.setAttribute( "user", user );
             session.setAttribute( "role", user.getRole() );
+            session.setAttribute("UserID", user.getId());
             return user.getRole() + "page";
         } else {
             throw new LoginSampleException( "the two passwords did not match" );
